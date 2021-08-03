@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import getQuote from '../services/twinPeaksAPI.js';
-import Character from '../components/app/character/Quote';
-import Load from '../components/app/character/Load';
+import Character from '../components/app/quotes/Quote';
+import Load from '../components/app/quotes/Load';
 import styled from 'styled-components';
 
 const Body = styled.div`
