@@ -8,10 +8,12 @@ align-items: flex-end;
 width: 80%;
 height: 15rem;`;
 
+
 export default function Quote({ quote }) {
   return <Container> {quote} </Container>;
 }
 
 Quote.propTypes = {
-  quote: PropTypes.string
+  quote: PropTypes.string,
+
 };

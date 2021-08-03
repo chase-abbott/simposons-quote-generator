@@ -12,17 +12,28 @@ justify-content: center;
 width: 80%;
 height: 50%;`;
 
+const Loader = styled.img`
+position: aboslute;
+top: 200px;
+`;
+
 export default function QuoteContainer() {
   const [quote, setQuote] = useState('Click to get a quote');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLoad = () => {
+    setIsLoading(true);
     return getQuote()
-      .then(res => setQuote(res));
+      .then(res => setQuote(res))
+      .then(() => setIsLoading(false));
   };
 
   return (
     <Body>
-      <Character quote={quote.quoteText}/>
+      {isLoading ? 
+        <Loader src="./loader.gif" alt="loader"/> 
+        : <Character quote={quote.quoteText}/>
+      }
       <Load onLoad={handleLoad}/>
     </Body>
   ); 
